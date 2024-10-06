@@ -1,46 +1,46 @@
 ﻿// Задача 1: Напишите программу, которая бесконечно запрашивает целые числа
 // с консоли. Программа завершается при вводе символа ‘q’ или при вводе числа, сумма цифр которого чётная.
 
-//Метод int.TryParse(string s, out int result) проверяет, можно ли получить число из строки.
-//Если это возможно - возвращает true и полученное число out-параметром,
-//иначе возвращает false результатом и default(int) out-параметром.
+void AskForInput()
+{
+    Console.WriteLine("Введите число: ");
+    InputNumber(); //вызываем функцию ввода числа
+}
 
-// void InputNumberInCicle()
-// {
-//     Console.WriteLine("Введите число: ");
-//     InputNumber();
-// }
-
-// void InputNumber()
-// {
-//     string input = Console.ReadLine();
-//     if (int.TryParse(input, out int i))
-//     {
-//         int inputNum = Int32.Parse(input);
-//         if (!CheckNumberEven(inputNum))
-//         {
-//             InputNumberInCicle();
-//         }
-//         else
-//         {
-//             Console.WriteLine("Осуществлен выход из программы");
-//         }
-//         //InputNumberInCicle();
-//     }
-//     else if (CheckQ(input))
-//     {
-//         Console.WriteLine("Осуществлен выход из программы");
-//     }
-//     else
-//     {
-//         Console.WriteLine("Ошибка");
-//     }
-// }
+void InputNumber()
+{
+    string input = Console.ReadLine(); //читаем, что ввел пользователь
+    //Метод int.TryParse(string s, out int result) проверяет, можно ли получить число из строки.
+    //Если это возможно - возвращает true и полученное число out-параметром,
+    //иначе возвращает false результатом и default(int) out-параметром.
+    if (int.TryParse(input, out int i)) //если ввод - число 
+    {
+        int inputNum = Int32.Parse(input); //в новую переменную записываем это число
+        if (!CheckNumberEven(inputNum)) //проверяем на условие, что сумма цифр - нечетная
+        {
+            AskForInput(); //бесконечно друг друга дергают функции для вызова
+                            // друг друга, пока не будет выполнено одно из условий завершения работы программы
+        }
+        else
+        {
+            Console.WriteLine("Осуществлен выход из программы");
+        }
+    }
+    else if (CheckQ(input)) //проверяем, что ввод в консоль - это q
+    {
+        Console.WriteLine("Осуществлен выход из программы");
+    }
+    else //это если пользователь вводит фигню
+    {
+        Console.WriteLine("Ошибка, попробуйте еще раз ввести число.\n Для выхода из программы нажмите q");
+        AskForInput();
+    }
+}
 
 bool CheckNumberEven(int input)
 {
     int sum = 0;
-    while (input < 0)
+    while (input != 0)
     {
         sum += input % 10;
         input = input / 10;
@@ -59,39 +59,4 @@ bool CheckQ(string input)
     return (input.Equals(str));
 }
 
-
-//InputNumber();
-
-// string test = "w";
-// if (CheckQ(test)) {
-//     Console.WriteLine("yes");
-// }
-// else{
-//  Console.WriteLine("nu-uuuh");   
-// }
-
-
-
-
-// int test = 120;
-// if (CheckNumberEven(test)) {
-//     Console.WriteLine("yes");
-// }
-// else{
-//  Console.WriteLine("nu-uuuh");   
-// }
-
-// Console.WriteLine("Введите число: ");
-// InputNumber();
-
-
-int input = 120;
-int sum = 0;
-while (input != 0)
-{
-    sum += input % 10;
-    Console.WriteLine(sum);
-    input = input / 10;
-    Console.WriteLine(input);
-}
-Console.WriteLine(sum);
+AskForInput(); //начало работы - переход к функции печати на экран просьбы ввести что-то
