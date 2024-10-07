@@ -1,0 +1,15 @@
+D:\GB_developer\CSHARP\HW_5\task_1\obj\Debug\net8.0\task_1.GeneratedMSBuildEditorConfig.editorconfig
+D:\GB_developer\CSHARP\HW_5\task_1\obj\Debug\net8.0\task_1.AssemblyInfoInputs.cache
+D:\GB_developer\CSHARP\HW_5\task_1\obj\Debug\net8.0\task_1.AssemblyInfo.cs
+D:\GB_developer\CSHARP\HW_5\task_1\obj\Debug\net8.0\task_1.csproj.CoreCompileInputs.cache
+D:\GB_developer\CSHARP\HW_5\task_1\obj\Debug\net8.0\task_1.sourcelink.json
+D:\GB_developer\CSHARP\HW_5\task_1\bin\Debug\net8.0\task_1.exe
+D:\GB_developer\CSHARP\HW_5\task_1\bin\Debug\net8.0\task_1.deps.json
+D:\GB_developer\CSHARP\HW_5\task_1\bin\Debug\net8.0\task_1.runtimeconfig.json
+D:\GB_developer\CSHARP\HW_5\task_1\bin\Debug\net8.0\task_1.dll
+D:\GB_developer\CSHARP\HW_5\task_1\bin\Debug\net8.0\task_1.pdb
+D:\GB_developer\CSHARP\HW_5\task_1\obj\Debug\net8.0\task_1.dll
+D:\GB_developer\CSHARP\HW_5\task_1\obj\Debug\net8.0\refint\task_1.dll
+D:\GB_developer\CSHARP\HW_5\task_1\obj\Debug\net8.0\task_1.pdb
+D:\GB_developer\CSHARP\HW_5\task_1\obj\Debug\net8.0\task_1.genruntimeconfig.cache
+D:\GB_developer\CSHARP\HW_5\task_1\obj\Debug\net8.0\ref\task_1.dll
