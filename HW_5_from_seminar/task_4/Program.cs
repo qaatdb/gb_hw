@@ -56,41 +56,38 @@ int[,] DeleteCross(int[,] matrix, int[] coodinates)
     int coordinateRow = coodinates[0];
     int coordinateCol = coodinates[1];
     int[,] result = new int[matrix.GetLength(0) - 1, matrix.GetLength(1) - 1];
-    //сначала удалим строку
-    // int a = 0;
-    // int b = 0;
-    // for (int i = 0; i < matrix.GetLength(0) - 1; i++) {
-    //     for (int j = 0; j < matrix.GetLength(1); j++)
-    //     {
-    //         if (i != coordinateRow)
-    //         {
-    //             result[a, b] = matrix[i, j];
-    //         }
-    //         else {
-    //         result[a, b] = matrix[i + 1, j];
-    //         }
-    //         b++;
-    //     }
-    //     a++;
-    // }
-    // a = 0;
-    // b = 0;
-    // //теперь удалим столбец
-    // for (int i = 0; i < matrix.GetLength(0); i++) {
-    //     for (int j = 0; j < matrix.GetLength(1) - 1; j++)
-    //     {
-    //         if (j != coordinateCol)
-    //         {
-    //             result[a, b] = matrix[i, j];
-    //         }
-    //         else {
-    //         result[a, b] = matrix[i, j + 1];
-    //         }
-    //         b++;
-    //     }
-    //     a++;
-    // }
-    // return result;
+    for (int i = 0; i < result.GetLength(0); i++)
+    {
+        if (i != coordinateRow)
+        {
+            for (int j = 0; j < result.GetLength(1); j++)
+            {
+                 (j != coordinateCol && result[i, j] != 0)
+                {
+                    result[i, j] = matrix[i, j];
+                }
+                else
+                {
+                    result[i, j] = matrix[i, j + 1];
+                }
+            }
+        }
+        else
+        {
+            for (int j = 0; j < result.GetLength(1); j++)
+            {
+                if (j != coordinateCol && result[i, j] != 0)
+                {
+                    result[i, j] = matrix[i + 1, j];
+                }
+                else
+                {
+                    result[i, j] = matrix[i + 1, j + 1];
+                }
+            }
+        }
+    }
+    return result;
 }
 
 Console.WriteLine("Введите количество строк в двумерном массиве: ");
