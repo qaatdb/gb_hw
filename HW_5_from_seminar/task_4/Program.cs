@@ -62,7 +62,7 @@ int[,] DeleteCross(int[,] matrix, int[] coodinates)
         {
             for (int j = 0; j < result.GetLength(1); j++)
             {
-                 (j != coordinateCol && result[i, j] != 0)
+                if (j != coordinateCol)
                 {
                     result[i, j] = matrix[i, j];
                 }
@@ -76,7 +76,7 @@ int[,] DeleteCross(int[,] matrix, int[] coodinates)
         {
             for (int j = 0; j < result.GetLength(1); j++)
             {
-                if (j != coordinateCol && result[i, j] != 0)
+                if (j != coordinateCol)
                 {
                     result[i, j] = matrix[i + 1, j];
                 }
