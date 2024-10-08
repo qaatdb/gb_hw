@@ -56,35 +56,23 @@ int[,] DeleteCross(int[,] matrix, int[] coodinates)
     int coordinateRow = coodinates[0];
     int coordinateCol = coodinates[1];
     int[,] result = new int[matrix.GetLength(0) - 1, matrix.GetLength(1) - 1];
-    for (int i = 0; i < result.GetLength(0); i++)
+    int rowIndex = 0;
+    int colIndex = 0;
+    // Копируем элементы массива в новый массив, пропуская строку и столбец с наименьшим элементом
+    for (int i = 0; i < matrix.GetLength(0); i++)
     {
         if (i != coordinateRow)
         {
-            for (int j = 0; j < result.GetLength(1); j++)
+            for (int j = 0; j < matrix.GetLength(1); j++)
             {
                 if (j != coordinateCol)
                 {
-                    result[i, j] = matrix[i, j];
-                }
-                else
-                {
-                    result[i, j] = matrix[i, j + 1];
+                    result[rowIndex, colIndex] = matrix[i, j];
+                    colIndex++;
                 }
             }
-        }
-        else
-        {
-            for (int j = 0; j < result.GetLength(1); j++)
-            {
-                if (j != coordinateCol)
-                {
-                    result[i, j] = matrix[i + 1, j];
-                }
-                else
-                {
-                    result[i, j] = matrix[i + 1, j + 1];
-                }
-            }
+            rowIndex++;
+            colIndex = 0;
         }
     }
     return result;
