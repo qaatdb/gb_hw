@@ -1,0 +1,1 @@
+Конспекты: https://docs.google.com/document/d/16494eW1IyCtoFvwlpLNkgms9oS4Qaw6Cd4EZ9RXruxk/edit?pli=1&tab=t.0
